@@ -4,3 +4,4 @@
   gather_facts: false
 
 - import_playbook: playbooks/test.yml
+- import_playbook: playbooks/dev.yml
