@@ -1,0 +1,6 @@
+---
+- name: Install and configure home lab
+  hosts: all
+  gather_facts: false
+
+- import_playbook: playbooks/test.yml
