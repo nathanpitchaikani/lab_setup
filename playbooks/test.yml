@@ -1,8 +1,10 @@
 ---
 # This playbook prints a simple debug message
 - name: Echo
-  hosts: 127.0.0.1
-  connection: local
+  hosts: labsetup
+  become_user: root
+  become_method: sudo
+  gather_facts: false
 
   tasks:
   - name: Print debug message

@@ -1,0 +1,6 @@
+---
+docker_compose_version: latest
+docker_version: latest
+docker_containerd_version: latest
+docker_buildx_version: latest
+ansible_distribution_release: focal

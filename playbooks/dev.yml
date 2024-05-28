@@ -16,3 +16,6 @@
 
   roles:
     - role: git
+    - role: system
+    - role: docker
+    - role: terraform
