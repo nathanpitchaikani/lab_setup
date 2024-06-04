@@ -1,14 +1,36 @@
 ---
 
-  - name: Install required system packages
-    apt:
-      pkg:
-        - apt-transport-https
-        - ca-certificates
-        - curl
-        - software-properties-common
-        - python3-pip
-        - virtualenv
-        - python3-setuptools
+  - name: update dns config
+    ansible.builtin.copy:
+      src: /mnt/hgfs/dev_content/lab_setup/files/resolv.conf
+      dest: /etc/resolv.conf
+
+  - name: Update all packages
+    ansible.builtin.apt:
+      update_cache: yes
+      cache_valid_time: 3600
+
+  - name: Remove useless packages from the cache
+    ansible.builtin.apt:
+      autoclean: yes
+
+
+  - name: Installing curl
+    ansible.builtin.apt:
+      name: curl
       state: latest
       update_cache: true
+
+
+#  - name: Install required system packages
+#    ansible.builtin.apt:
+#      pkg:
+#        - apt-transport-https
+#        - ca-certificates
+#        - curl
+#        - software-properties-common
+#        - python3-pip
+#        - virtualenv
+#        - python3-setuptools
+#      state: latest
+#      update_cache: true

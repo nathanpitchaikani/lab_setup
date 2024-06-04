@@ -1,2 +1,2 @@
 [server]
-192.168.236.130 ansible_user=natter ansible_ssh_private_key_file=/mnt/hgfs/dev_content/keys/id_rsa
+192.168.236.130 ansible_user=natter ansible_ssh_private_key_file=/home/natter/Documents/copy_id_rsa

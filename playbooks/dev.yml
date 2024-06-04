@@ -1,21 +1,14 @@
 ---
 - name: Install Development Tools
-  hosts: 127.0.0.1
-  connection: local
-  vars_files:
-    - ../vars/common.yml
-  #  - ../vars/secrets
-  become: true
+  hosts: server
+#  vars_files:
+#    - ../vars/common.yml
+#  #  - ../vars/secrets
+  become: true # NEED TO RUN WITH -K (input root pw)
   gather_facts: true
 
-  pre_tasks:
-    - name: Update apt cache if needed
-      apt:
-        update_cache: true
-        cache_valid_time: 86400
-
   roles:
-    - role: git
     - role: system
-    - role: docker
-    - role: terraform
+    # - role: git
+    # - role: docker
+    # - role: terraform

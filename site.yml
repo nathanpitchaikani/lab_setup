@@ -1,9 +1,9 @@
 ---
 - name: Install and configure home lab
-  hosts: labsetup
+  hosts: server
   become_user: root
   become_method: sudo
   gather_facts: false
 
-- import_playbook: playbooks/test.yml
-# - import_playbook: playbooks/dev.yml
+# - import_playbook: playbooks/test.yml
+- import_playbook: playbooks/dev.yml
