@@ -1,0 +1,27 @@
+---
+
+- name: Ensure keyrings directory exists
+  ansible.builtin.file:
+    path: "/etc/apt/keyrings"
+    owner: root
+    group: root
+    mode: 0755
+    state: directory
+
+- name: Add repo key and source
+  block:
+    - name: Add Terraform GPG apt Key
+      ansible.builtin.apt_key:
+        url: https://apt.releases.hashicorp.com/gpg
+        state: present
+
+    - name: Terraform repo apt source
+      ansible.builtin.apt_repository:
+        # signed-by=/etc/apt/keyrings/docker.gpg
+        repo: "deb https://apt.releases.hashicorp.com jammy main"
+        state: present
+
+- name: Install Terraform
+  ansible.builtin.apt:
+    name: terraform
+    state: latest

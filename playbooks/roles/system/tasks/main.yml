@@ -10,27 +10,22 @@
       update_cache: yes
       cache_valid_time: 3600
 
+  - name: Install required system packages
+    ansible.builtin.apt:
+      pkg:
+        - apt-transport-https
+        - ca-certificates
+        - curl
+        - software-properties-common
+        - python3-pip
+        - virtualenv
+        - python3-setuptools
+      state: latest
+
+  - name: update apt list
+    ansible.builtin.apt:
+      update_cache: true
+
   - name: Remove useless packages from the cache
     ansible.builtin.apt:
       autoclean: yes
-
-
-  - name: Installing curl
-    ansible.builtin.apt:
-      name: curl
-      state: latest
-      update_cache: true
-
-
-#  - name: Install required system packages
-#    ansible.builtin.apt:
-#      pkg:
-#        - apt-transport-https
-#        - ca-certificates
-#        - curl
-#        - software-properties-common
-#        - python3-pip
-#        - virtualenv
-#        - python3-setuptools
-#      state: latest
-#      update_cache: true

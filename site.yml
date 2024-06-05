@@ -7,3 +7,14 @@
 
 # - import_playbook: playbooks/test.yml
 - import_playbook: playbooks/dev.yml
+- import_playbook: playbooks/networking.yml
+
+
+#TODO
+# - security playbook (what tools should I add?)
+# ---> Wireshark?
+# - Fix versioning for Docker
+# - Add git profile conection
+# - Fix Terraform URL
+# - Fix versioning for Ansible
+# - ansible to turn on network and off

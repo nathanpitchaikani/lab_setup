@@ -1,0 +1,10 @@
+---
+
+  - name: Install required system packages
+    ansible.builtin.apt:
+      pkg:
+        - dnsutils
+        - openssl
+        - nmap
+        - net-tools
+      state: latest

@@ -9,6 +9,8 @@
 
   roles:
     - role: system
-    # - role: git
-    # - role: docker
+    - role: git
+    - role: docker
     # - role: terraform
+      # Later add versioning
+    - role: ansible

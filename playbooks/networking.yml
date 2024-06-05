@@ -1,0 +1,11 @@
+---
+- name: Install Networking Tools
+  hosts: server
+#  vars_files:
+#    - ../vars/common.yml
+#  #  - ../vars/secrets
+  become: true # NEED TO RUN WITH -K (input root pw)
+  gather_facts: true
+
+  roles:
+    - role: base_tools
